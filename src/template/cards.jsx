@@ -4,10 +4,7 @@ import noimage from './noimage.png';
 
 const Cards = ({ data, title }) => {
   // Function to handle image error
-  const handleImageError = (e) => {
-    e.target.src = {noimage}; // Set fallback image
-  };
-
+  
   return (
     <div className='w-full h-screen flex justify-around flex-wrap m-2 gap-1 '>
       {data.length > 0 ? (
@@ -17,9 +14,9 @@ const Cards = ({ data, title }) => {
               <div className='md:w-72 md:h-96 w-64 h-80'>
                 <img
                   className='w-full h-full object-cover object-center'
-                  src={`https://image.tmdb.org/t/p/original/${item.backdrop_path || item.poster_path || item.profile_path}`}
+                  src={item.backdrop_path || item.poster_path || item.profile_path?`https://image.tmdb.org/t/p/original/${item.backdrop_path || item.poster_path || item.profile_path}`:noimage}
                   alt={item.title || item.name || item.original_name || item.original_title}
-                  onError={handleImageError} // Set the fallback image on error
+                 
                 />
               </div>
               <h1 className='p-2 text-zinc-200 text-xl text-wrap w-72'>

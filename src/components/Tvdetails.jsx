@@ -13,6 +13,7 @@ const Tvdetails = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { pathname } = useLocation();
+    
 
     useEffect(() => {
         dispatch(asyncloadtv(id));
@@ -37,6 +38,7 @@ const Tvdetails = () => {
     const data = recommendations || similar || [];
 
     return (
+        <>
         <div
             style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${backgroundImageUrl})`,
@@ -114,14 +116,14 @@ const Tvdetails = () => {
                 </div>
                
             </div>
-            <div className='w-full mt-10 pointer-events-none '>
+            <Link   className='w-full mt-10   '>
                 <hr className='mb-2' />
                 <h1 className='text-2xl pb-2 text-zinc-100 font-semibold'>Seasons</h1>
                 
                 <Seasoncards data={seasondata}  />
            
                
-            </div>
+            </Link >
             <div className='w-full mt-10'>
                 <hr className='mb-2' />
                 <h1 className='text-2xl pb-2 text-zinc-100 font-semibold'>Recommended for you</h1>
@@ -129,6 +131,7 @@ const Tvdetails = () => {
             </div>
             <Outlet/>
         </div>
+        </>
     );
 };
 
