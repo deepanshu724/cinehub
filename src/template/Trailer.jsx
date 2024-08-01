@@ -29,7 +29,7 @@ const Trailer = () => {
                 className='absolute w-full h-full flex items-center justify-center top-0 left-0 z-100 bg-[rgba(0,0,0,0.88)]'
                 onClick={handleClose}
             >
-                <ReactPlayer url={`https://www.youtube.com/watch?v=${ytvid.key}`} />
+                <ReactPlayer controls={true}  url={`https://www.youtube.com/watch?v=${ytvid.key}`} />
             </div>
         )
     );
