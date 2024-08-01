@@ -114,7 +114,7 @@ const Tvdetails = () => {
                 </div>
                
             </div>
-            <div className='w-full mt-10 '>
+            <div className='w-full mt-10 pointer-events-none '>
                 <hr className='mb-2' />
                 <h1 className='text-2xl pb-2 text-zinc-100 font-semibold'>Seasons</h1>
                 
